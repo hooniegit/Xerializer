@@ -1,19 +1,14 @@
 package com.hooniegit.Xerializer.Tester;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
-public class Sample {
+public class Profile {
 
-    private String name;
-    private int age;
-    private List<String> hobby;
-
-    private Profile profile;
+    private String nickname;
+    private int id;
 
 }
