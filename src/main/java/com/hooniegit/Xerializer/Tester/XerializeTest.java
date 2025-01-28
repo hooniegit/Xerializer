@@ -27,7 +27,6 @@ public class XerializeTest {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        
 
     }
 

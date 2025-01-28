@@ -4,9 +4,6 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-
 import org.apache.commons.pool2.BasePooledObjectFactory;
 import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.PooledObject;
@@ -38,7 +35,6 @@ public class KryoSerializer {
             @Override
             public Kryo create() {
                 Kryo kryo = new Kryo();
-                // 현재 스레드의 클래스 로더를 Kryo에 설정
                 kryo.setClassLoader(Thread.currentThread().getContextClassLoader());
                 return kryo;
             }
@@ -50,7 +46,6 @@ public class KryoSerializer {
         }, config);
     }
 
-    // Serialize 메서드
     public static <T> byte[] serialize(T object) throws Exception {
         Kryo kryo = null;
         try {
@@ -71,7 +66,6 @@ public class KryoSerializer {
         }
     }
 
-    // Deserialize 메서드
     @SuppressWarnings("unchecked")
     public static <T> T deserialize(byte[] bytes) throws Exception {
         Kryo kryo = null;
