@@ -14,16 +14,6 @@ import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-/**
- * Data Serialization Class
- * - Kryo: For Rapid Data Serialization
- * - Netty: For Buffering
- * - Pool2: For Instance Re-Using
- * 
- * <Usage>
- * - Serialize T To ByteBuf
- * - De-Serialize ByteBuf To T
- */
 public class KryoSerializer {
 
     private static final ObjectPool<Kryo> kryoPool;
