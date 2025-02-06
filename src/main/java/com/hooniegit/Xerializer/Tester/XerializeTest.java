@@ -23,6 +23,7 @@ public class XerializeTest {
             byte[] b = KryoSerializer.serialize(sample);
             Sample<Profile> s = KryoSerializer.deserialize(b);
             System.out.println(s.getName() + " : " + s.getAge() + " : " + s.getT().getNickname());
+            System.out.println(s.getHobby().size());
 
         } catch (Exception ex) {
             ex.printStackTrace();
