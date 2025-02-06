@@ -18,11 +18,11 @@ public class XerializeTest {
         hobby.add("Football");
         hobby.add("Video Game");
 
-        Sample sample = new Sample("KDH", 30, hobby, new Profile("Hooniegit", 0));
+        Sample<Profile> sample = new Sample("KDH", 30, hobby, new Profile("Hooniegit", 0));
         try {
             byte[] b = KryoSerializer.serialize(sample);
-            Sample s = KryoSerializer.<Sample>deserialize(b);
-            System.out.println(s.getName() + " : " + s.getAge() + " : " + s.getProfile().getNickname());
+            Sample<Profile> s = KryoSerializer.deserialize(b);
+            System.out.println(s.getName() + " : " + s.getAge() + " : " + s.getT().getNickname());
 
         } catch (Exception ex) {
             ex.printStackTrace();

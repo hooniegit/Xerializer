@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
-public class Sample {
+public class Sample <T>{
 
     private String name;
     private int age;
     private List<String> hobby;
 
-    private Profile profile;
+    private T t;
 
 }
